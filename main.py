@@ -1,7 +1,8 @@
 import time
 import numpy as np 
 import matplotlib.pyplot as plt
-from tqdm.notebook import tqdm
+import os
+from tqdm import tqdm
 from Directory_creation import *
 from models import *
 from Data_Preparation import *
@@ -11,6 +12,7 @@ from Transformations import *
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import torchvision.utils
 
 
 
@@ -18,8 +20,11 @@ import torch.optim as optim
 dataset_path='/content/drive/MyDrive/Brain_Tumor_Detection'
 dir_PATH='TRAIN'
 
-
+create_dir(dir_PATH)
+prepare(dataset_path)
 dataloader=tranform_images(dir_PATH)
+display(dir_PATH)
+
 
 batch_size = 32
 LR_G = 0.0001
@@ -125,3 +130,10 @@ for epoch in range(epochs):
     epoch_time.append(time.time()- start)
 
 #             valid_image = netG(fixed_noise)
+
+
+
+os.makedirs('generated_images')
+
+generate_images('generated_images')
+show_generated_images('generated_images')

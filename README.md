@@ -57,18 +57,9 @@ You find here the link for the dataset.
         !chmod 600 ~/.kaggle/kaggle.json
         !kaggle datasets download -d abhranta/brain-tumor-detection-mri
 * Execute the command `pip install -r requirements.txt` 
-* Use the function `create_dir` in `Directory_creation.py` to create the training directory.
 * Run the code `dataset_extract.py` to extract the dataset from a zip file
-* Use the function `prepare` in `Data_Preparation.py` to split dataset.
-* Use the function `display` in `Display.py` to display some images from the dataset.
 * Run the code `main.py` 
-* Run the following script
-  ````
-  !apt-get install tree
-  !mkdir generated_images 
-  !tree -d
-* Use the function `generate_images` in `Image_generation.py` to generate new synthetic images.
-* Use the function `show_generated_images` in `Show_generated_images.py` to display the generated images.
+
 
 
 
